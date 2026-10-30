@@ -1,15 +1,20 @@
-import { useState } from 'react'
-import heroImg from './assets/hero.png'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
 import './App.css'
+import {BrowserRouter,Routes,Route} from 'react-router-dom';
+import Signup from './app/signup';
+import Login from './app/login';
+
+// --legacy-peer-deps
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
-      <h1 className='' >Hello</h1>
+      <BrowserRouter>
+      <Routes>
+        <Route path='/' element={<Signup/>}/>
+        <Route path='/login' element={<Login/>} />
+      </Routes>
+      </BrowserRouter>
     </>
   )
 }
